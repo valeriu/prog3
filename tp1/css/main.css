@@ -1,0 +1,47 @@
+body{
+	background-color:#ECF0F1;
+}
+main {
+	background-color: #fff;
+	border: 1px solid #e1e1e8;
+	border-radius: 10px;
+	margin:15px;
+}
+.nav-pills > .cartitem {
+	margin-left:100px;
+}
+header .btn-danger:hover, header .btn-danger:focus {
+	background-position: 0 0;
+}
+
+footer {
+	border-radius: 4px;
+	padding:10px;
+	margin-bottom:15px;
+	background-color:#BDC3C7;
+}
+
+/*Produit vignette*/
+.vignette article {
+	border:1px solid red;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	width:365px;
+	max-width:100%;
+	float:left;
+	margin:5px;
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+.clear {
+	
+	clear:both;
+	
+}
