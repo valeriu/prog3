@@ -23,15 +23,48 @@ footer {
 
 /*Produit vignette*/
 .vignette article {
-	border:1px solid red;
+	border:1px solid #f3f3f3;
+	border-radius:5px;
 	box-sizing:border-box;
 	-moz-box-sizing:border-box;
-	width:365px;
-	max-width:100%;
+	width:24%;
 	float:left;
-	margin:5px;
-	display: inline-block;
+	margin:10px 5px;
+	padding:5px;
 }
+.vignette article:hover{
+	border:1px solid #BDC3C7;
+	-webkit-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+	   -moz-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+	        box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+}
+.vignette article:nth-child(4n+1) {
+   clear: both;
+}
+.vignette .nom {
+	font-size:24px;
+	padding: 3px 2px 0px 5px;
+	margin-bottom:20px; 
+	font-family: 'Signika Negative', sans-serif;
+	font-weight:400;
+	text-transform:uppercase;
+	background-color:#F7F7F7;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.vignette:hover .nom:hover {
+	color:#428bca;
+}
+.vignette .image img {
+	height:auto;
+	width:100%
+
+}
+
 
 
 
