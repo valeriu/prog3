@@ -21,6 +21,13 @@ footer {
 	background-color:#BDC3C7;
 }
 
+#allproducts {
+
+	overflow: auto;
+}
+.toolbar .active {
+	font-weight:700;
+}
 /*Produit vignette*/
 .vignette article {
 	border:1px solid #f3f3f3;
@@ -112,7 +119,7 @@ footer {
 	padding:20px;
 	position:relative;
 	border-radius: 4px;
-		border:1px solid #BDC3C7;
+	border:1px solid #BDC3C7;
 	-webkit-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.2);
 	   -moz-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.2);
 	        box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.2);
