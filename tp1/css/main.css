@@ -1,3 +1,12 @@
+/*
+582-862 – Programmation Internet III (Jonathan Martel)
+Groupe : 1617 Pondération : 20 %
+		
+		Valeriu Tihai
+
+Travail pratique : Vitrine commerciale (partie 1)
+*/
+/* General CSS */
 body{
 	background-color:#ECF0F1;
 }
@@ -7,26 +16,40 @@ main {
 	border-radius: 10px;
 	margin:15px;
 }
+.clear {	
+	clear:both;
+}
+/* Navigation */
 .nav-pills > .cartitem {
 	margin-left:100px;
 }
+/* Header */
 header .btn-danger:hover, header .btn-danger:focus {
 	background-position: 0 0;
 }
-
+/* Toolbar */
+.toolbar {
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 4px;
+	background-color:#dedede;
+}
+.toolbar .active {
+	font-weight:700;
+}
+/* Footer */
 footer {
 	border-radius: 4px;
 	padding:10px;
 	margin-bottom:15px;
 	background-color:#BDC3C7;
 }
-
+/* All Articles */
 #allproducts {
-
 	overflow: auto;
 }
-.toolbar .active {
-	font-weight:700;
+.glyphicon-shopping-cart {
+	cursor: pointer;
 }
 /*Produit vignette*/
 .vignette article {
@@ -111,7 +134,6 @@ footer {
 }
 
 /*Produit liste*/
-
 .liste article {
 	clear: both;
 	margin:30px 5px;
@@ -167,19 +189,4 @@ footer {
 	text-transform:uppercase;
 	font-weight:700;
 	width:89%
-}
-
-
-
-
-
-
-
-
-
-
-.clear {
-	
-	clear:both;
-	
 }
