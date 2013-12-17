@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script type="text/javascript" src="Maires.js"></script>
+	<script>
+		//console.info("Maires.getNombreMaires");
+		Maires.getNombreMaires(function (param){console.log(param)});
+
+		//console.info("Maires.rechercheMaires , date");
+		try {
+			Maires.rechercheMaires("date", 2013, function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.rechercheMaires("1833", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.rechercheMaires("date", 182, function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.rechercheMaires("date2", 1833, function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.rechercheMaires("date", 1832, function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		//console.info("Maires.rechercheMaires , nom");
+		try {
+			Maires.rechercheMaires("nom", "BourreT", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.rechercheMaires("McGill", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+
+		//console.info("Maires.listeMaires , nom");
+		try {
+			Maires.listeMaires("nom", "asc", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.listeMaires("nom", "desc", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.listeMaires("desc", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		//date
+		try {
+			Maires.listeMaires("date", "ddfdsfdgfdsgdsfgsdg", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+
+		try {
+			Maires.listeMaires("date", "asc", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+		try {
+			Maires.listeMaires("date", function (param){console.dir(param)});	
+		} catch (e){
+			console.warn(e);
+		}
+
+
+	</script>
+</head>
+<body>
+	<h1>console.log();</h1>
+</body>
+</html>
