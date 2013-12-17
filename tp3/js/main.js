@@ -18,8 +18,13 @@ $(function(){
 		//console.log(newPerPage);
 		Articles.getArticles(0,newPerPage,0);
 	});	
+	////panie
+	//$('.glyphicon').css();
+	
+
 
 });
+
 
 var Articles = (function() {
 	var articlePerPage = 12;
@@ -40,9 +45,37 @@ var Articles = (function() {
 			});
 		req.done(function( data ) {
 			$.each( data, function(i, item ) {
-				$( "<article class=\"produit\"><header class=\"nom\">"+data[i]["nom"]+"</header><section class=\"image\"><img src=\""+data[i]["image"]+"\"></section><section class=\"description\">"+data[i]["description"]+"</section><section class=\"prix\"><span class=\"prix-valeur glyphicon glyphicon-shopping-cart\">"+data[i]["prix"]["valeur"]+"</span><span class=\"prix-unite\">"+data[i]["prix"]["unite"]+"</span></section><section class=\"categorie\">"+data[i]["categorie"]+"</section></article>").appendTo( "#allproducts" );
+				$( "<article id="+data[i]["id"]+ " class=\"produit\"><header class=\"nom\">"+data[i]["nom"]+"</header><section class=\"image\"><img src=\""+data[i]["image"]+"\"  class=\"artimg\"></section><section class=\"description\">"+data[i]["description"]+"</section><section class=\"prix\"><span class=\"prix-valeur glyphicon glyphicon-shopping-cart\">"+data[i]["prix"]["valeur"]+"</span><span class=\"prix-unite\">"+data[i]["prix"]["unite"]+"</span></section><section class=\"categorie\">"+data[i]["categorie"]+"</section></article>").appendTo( "#allproducts" );
 			});
 			Articles.setPagesNav(vnombre);
+			//add event for click
+			$('article').bind('click', function(ev) {
+				articleID = this.id;
+				var articelNom = $( "#"+articleID+" .nom" ).text();
+				var articelDescription = $( "#"+articleID+" .description" ).text();
+				var articelImage = $( "#"+articleID+" .artimg" ).attr( "src" );
+				var articelCategorie =  $( "#"+articleID+" .categorie" ).text();
+				var articlePrixValeur =  $( "#"+articleID+" .prix-valeur" ).text();
+				var articlePrixUnite =  $( "#"+articleID+" .prix-unite" ).text();
+				//console.log(articleID+" / "+ articelNom+" / "+ articelDescription+" / "+ articelCategorie+" / "+ articlePrixValeur+" / "+articlePrixUnite+" / "+articelImage);
+				var oArticle = new Object();
+					oArticle.oArticleID = articleID;
+					oArticle.oArticelNom = articelNom;
+					oArticle.oArticelDescription = articelDescription;
+					oArticle.oArticelImage = articelImage;
+					oArticle.oArticelCategorie = articelCategorie;
+					oArticle.oArticlePrixValeur = articlePrixValeur;
+					oArticle.oArticlePrixUnite = articlePrixUnite;
+				var jArticel = JSON.stringify(oArticle);
+				//console.log(oArticle);
+				//console.log(jArticel);
+				localStorage.setItem(articleID, jArticel);
+				var retrievedObject = localStorage.getItem(articleID);
+
+				console.dir(JSON.parse(retrievedObject));
+
+			});	
+
 			$(".bubblingG").hide();
 		});
 		req.fail(function () {
@@ -81,7 +114,7 @@ var Articles = (function() {
 					var endArticle = $(this).attr("rel");
 					var startArticle = endArticle - perPage;
 					//console.log(startArticle+"/"+endArticle);
-					Articles.getArticles(startArticle,perPage,0);		
+					Articles.getArticles(startArticle,perPage,0);
 				})
 
 		});
@@ -91,4 +124,8 @@ var Articles = (function() {
 		getArticles: 		_getArticles,
 		setPagesNav: 		_setPagesNav
 	}
+
+
+
 }());
+
