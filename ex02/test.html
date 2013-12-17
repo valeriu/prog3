@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Maires Montreal</title>
+	<script type="text/javascript" src="Maires.js"></script>
+	<script>
+		console.log("Exercice 2 : Création d’un objet avec le patron de conception Module");
+	//test unitaire pour Nombre de maires
+		console.warn("Maires.getNombreMaires()");
+		console.info("Nombre de maires : "+Maires.getNombreMaires());
+
+	//test unitair pour Recherche Maires
+		console.warn("Méthodes : Maires.rechercheMaires({type:[date, nom], valeur:\"recherche\"})");
+		console.info("Un reponse (Rodier) type (nom) : ");
+		console.dir(Maires.rechercheMaires("nom","Rodier"));
+		console.info("Deux reponses (1954) type (date) : ");
+		console.dir(Maires.rechercheMaires("date", 1954));
+		console.info("Recherche Maires (4 reponses[Houde]) : ");
+		console.dir(Maires.rechercheMaires("nom","Houde"));
+		//
+		//
+		console.debug("No reponse : "+Maires.rechercheMaires("nom","Martel"));
+		console.debug("No String : "+Maires.rechercheMaires("nom", 1111));
+		console.debug("No type : "+Maires.rechercheMaires("Rodier"));
+		console.debug("Année negative (-25) : "+Maires.rechercheMaires("date", -25));
+		console.debug("Année (50) : "+Maires.rechercheMaires("date", 50));
+		console.debug("Année (2550) : "+Maires.rechercheMaires("date", 2550));
+		console.debug("Année pas une nombre (Tralala) : "+Maires.rechercheMaires("date", "Tralala"));
+
+
+
+	//test unitaire pour Liste Maires
+		console.warn("Maires.listeMaires({type:[\"date\", \"nom\"], ordre:[\"ASC\", \"DESC\"]})");	
+		//date
+		console.info("Liste Maires (date, asc) : ");
+		console.dir(Maires.listeMaires("date", "asc"));
+		console.info("Liste Maires (date, desc) : ");
+		console.dir(Maires.listeMaires("date", "desc"));
+		//console.clear();
+		console.info("Liste Maires (nom, asc) : ");
+		console.dir(Maires.listeMaires("nom", "asc"));
+		console.info("Liste Maires (nom, desc) : ");
+		console.dir(Maires.listeMaires("nom", "desc"));
+
+		console.info("Exemple d'utilisation : Maires.listeMaires(\"nom\", \"asc\");  || Maires.listeMaires(\"nom\", \"desc\");");
+		console.debug("No type : "+Maires.listeMaires("asc"));
+		console.debug("No valide order : "+Maires.listeMaires("date", "asasa"));
+		console.debug("Nomber : "+Maires.listeMaires(111));
+		console.debug("No order : "+Maires.listeMaires("date"));
+
+		
+
+
+
+
+	</script>
+</head>
+<body>
+	<h1>Vivre console.log(); </h1>
+</body>
+</html>
