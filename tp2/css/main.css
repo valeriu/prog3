@@ -1,0 +1,284 @@
+/*
+582-862 – Programmation Internet III (Jonathan Martel)
+Groupe : 1617 Pondération : 20 %
+		
+		Valeriu Tihai
+
+Travail pratique : Vitrine commerciale (partie 1)
+*/
+/* General CSS */
+body{
+	background-color:#ECF0F1;
+}
+main {
+	background-color: #fff;
+	border: 1px solid #e1e1e8;
+	border-radius: 10px;
+	margin:15px;
+}
+.clear {	
+	clear:both;
+}
+/* Navigation */
+.nav-pills > .cartitem {
+	margin-left:100px;
+}
+/* Header */
+header .btn-danger:hover, header .btn-danger:focus {
+	background-position: 0 0;
+}
+/* Toolbar */
+.toolbar {
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 4px;
+	background-color:#dedede;
+}
+.toolbar .active {
+	font-weight:700;
+}
+/* Footer */
+footer {
+	border-radius: 4px;
+	padding:10px;
+	margin-bottom:15px;
+	background-color:#BDC3C7;
+}
+/* All Articles */
+#allproducts {
+	overflow: auto;
+}
+.glyphicon-shopping-cart {
+	cursor: pointer;
+}
+/*Produit vignette*/
+.vignette article {
+	border:1px solid #f3f3f3;
+	border-radius:5px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	width:24%;
+	float:left;
+	margin:10px 5px;
+	padding:5px;
+}
+.vignette article:hover{
+	border:1px solid #BDC3C7;
+	-webkit-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+	   -moz-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+	        box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+}
+.vignette article:nth-child(4n+1) {
+   clear: both;
+}
+.vignette .nom {
+	font-size:24px;
+	padding: 3px 2px 0px 5px;
+	margin-bottom:20px; 
+	font-family: 'Signika Negative', sans-serif;
+	font-weight:400;
+	text-transform:uppercase;
+	background-color:#F7F7F7;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.vignette article:hover .nom {
+	color:#428bca;
+}
+.vignette .image img {
+	height:auto;
+	width:70%;
+	margin: 0 auto;
+	display: block;
+}
+
+.vignette .description {
+	margin:10px 0 ;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+}
+
+.vignette .prix{
+	font-family: Georgia, serif;
+	font-size:24px;
+	width:49.9%;
+	float:left;
+	color:#428bca;
+	padding:0 0 0 5px;
+}
+
+.vignette .categorie {
+	text-align:right;
+	width:49.9%;
+	float:left;
+	text-transform:uppercase;
+	padding:8px 5px 0 0;
+}
+.vignette article:hover .categorie, .vignette article:hover .description {
+	display:none;
+}
+.vignette article:hover img {
+	width:100%;
+}
+.vignette article:hover .prix {
+	height:40px;
+	color:#c12e2a;
+	font-size:34px;
+	width:99.9%;
+	text-align:center;
+	margin:50px 0;
+}
+
+/*Produit liste*/
+.liste article {
+	clear: both;
+	margin:30px 5px;
+	overflow: auto;
+	padding:20px;
+	position:relative;
+	border-radius: 4px;
+	border:1px solid #BDC3C7;
+	-webkit-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.2);
+	   -moz-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.2);
+	        box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.2);
+}
+.liste article:hover {
+	-webkit-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+	   -moz-box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+	        box-shadow: 1px 1px 21px rgba(50, 50, 50, 0.5);
+}
+.liste .nom {
+	font-family: 'Signika Negative', sans-serif;
+	font-weight:400;
+	font-size: 20px;
+	text-transform:uppercase;
+	color:#428bca;
+	float:right;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+.liste .image {
+	width: 9.9%;
+	float:left;
+	clear: both;
+}
+.liste .image img {
+	width:100%;
+}
+.liste .description {
+	float:right;
+	width:89%;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:14px;
+}
+ .liste .prix {
+	float:right;
+	width:89%;
+	font-family: Georgia, serif;
+	font-size:34px;
+	text-align:right;
+	color:#c12e2a;
+}
+ .liste .categorie {
+	float:right;
+	text-transform:uppercase;
+	font-weight:700;
+	width:89%
+}
+
+/*
+See more at: http://cssload.net/#sthash.IARWKH0e.dpuf
+*/
+.bubblingG {
+	text-align: center;
+	width:100%;
+	margin:400px 0;
+}
+.error {
+	margin:150px; 
+}
+.bubblingG span {
+	display: inline-block;
+	vertical-align: middle;
+	width: 10px;
+	height: 10px;
+	margin: 25px auto;
+	background: #919491;
+	-moz-border-radius: 50px;
+	-moz-animation: bubblingG 1.3s infinite alternate;
+	-webkit-border-radius: 50px;
+	-webkit-animation: bubblingG 1.3s infinite alternate;
+	border-radius: 50px;
+	animation: bubblingG 1.3s infinite alternate;
+}
+
+#bubblingG_1 {
+	-moz-animation-delay: 0s;
+	-webkit-animation-delay: 0s;
+	animation-delay: 0s;
+}
+
+#bubblingG_2 {
+	-moz-animation-delay: 0.39s;
+	-webkit-animation-delay: 0.39s;
+	animation-delay: 0.39s;
+}
+
+#bubblingG_3 {
+	-moz-animation-delay: 0.78s;
+	-webkit-animation-delay: 0.78s;
+	animation-delay: 0.78s;
+}
+
+@-moz-keyframes bubblingG {
+	0% {
+		width: 10px;
+		height: 10px;
+		background-color:#919491;
+		-moz-transform: translateY(0);
+	}
+
+	100% {
+		width: 24px;
+		height: 24px;
+		background-color:#FFFFFF;
+		-moz-transform: translateY(-21px);
+	}
+}
+
+@-webkit-keyframes bubblingG {
+	0% {
+		width: 10px;
+		height: 10px;
+		background-color:#919491;
+		-webkit-transform: translateY(0);
+	}
+
+	100% {
+		width: 24px;
+		height: 24px;
+		background-color:#FFFFFF;
+		-webkit-transform: translateY(-21px);
+	}
+}
+
+@keyframes bubblingG {
+	0% {
+		width: 10px;
+		height: 10px;
+		background-color:#919491;
+		transform: translateY(0);
+	}
+
+	100% {
+		width: 24px;
+		height: 24px;
+		background-color:#FFFFFF;
+		transform: translateY(-21px);
+	}
+}

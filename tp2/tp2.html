@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Shop Online</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<!-- Google Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Signika+Negative' rel='stylesheet' type='text/css'>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+  </head>
+  <body>
+	<main class="container">
+	  <header class="header">
+		<!--Nav simple-->
+		<ul class="nav nav-pills pull-right">
+		  <li class="active"><a href="#">Home</a></li>
+		  <li><a href="#">About</a></li>
+		   <li><a href="#">Produits</a></li>
+			<li><a href="#">Contact</a></li>
+		  <li class="cartitem"><a class="btn-danger" href="#">2 Items</a></li>
+		</ul>
+		<!-- Tritre du site -->
+		<h3 class="text-muted">Shop Online</h3>
+	  </header>
+	  <!-- Toolbar avec option du select -->
+	  <div class="toolbar">
+		Mode d'affichage : <a id="vignette" href="#vignette">Vignette</a> ou <a id="liste" href="#liste">Liste</a> 
+		Proiduit per Page : 
+		<select name="perpage" id="perpageselect">
+			<option value="12">--select--</option>
+			<option value="12">12</option>
+			<option value="24">24</option>
+			<option value="36">36</option>
+		</select>
+	  	<div class="bubblingG">
+			<!-- loading-->
+			<span id="bubblingG_1"></span>
+			<span id="bubblingG_2"></span>
+			<span id="bubblingG_3"></span>
+		</div>
+	  </div>
+	  <!-- Produits -->
+	  <div class="vignette" id="allproducts">
+		<!-- ======================================= Start articles ======================================= -->
+		<!-- ======================================== End articles ======================================== -->
+	  </div><!-- /Produits -->  
+	  <!-- Ajouter pagination par programmation-->
+	 <div class="page"></div>
+	  <footer>
+		<p>Source: Text description --> Casio Canada (http://fr.casioca.com/) Images -->  Casio Russian (http://www.casio-europe.com/ru/)</p>
+	  </footer>
+	</main>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		//frist init 
+		Articles.getArticles(0,12,0);
+	</script>
+  </body>
+</html>
+<!--
+/*
+582-862 – Programmation Internet III (Jonathan Martel)
+Groupe : 1617 Pondération : 20 %
+		
+		Valeriu Tihai
+
+Travail pratique 2
+*/
+-->
