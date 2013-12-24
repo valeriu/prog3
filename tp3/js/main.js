@@ -48,7 +48,18 @@ var Articles = (function() {
 			});
 		req.done(function( data ) {
 			$.each( data, function(i, item ) {
-				$( "<article id="+data[i]["id"]+ " class=\"produit\"><header class=\"nom\">"+data[i]["nom"]+"</header><section class=\"image\"><img src=\""+data[i]["image"]+"\"  class=\"artimg\"></section><section class=\"description\">"+data[i]["description"]+"</section><section class=\"prix\"><span class=\"prix-valeur glyphicon glyphicon-shopping-cart\">"+data[i]["prix"]["valeur"]+"</span><span class=\"prix-unite\">"+data[i]["prix"]["unite"]+"</span></section><section class=\"categorie\">"+data[i]["categorie"]+"</section></article>").appendTo( "#allproducts" );
+				$( "<article id="+data[i]["id"]+ " class=\"produit\">\n\
+					<header class=\"nom\">"+data[i]["nom"]+"</header>\n\
+				<section class=\"image\">\n\
+					<img src=\""+data[i]["image"]+"\"  class=\"artimg\">\n\
+				</section>\n\
+				<section class=\"description\">"+data[i]["description"]+"</section>\n\
+				<section class=\"prix\">\n\
+					<span class=\"prix-valeur glyphicon glyphicon-shopping-cart\" data-prix=\""+data[i]["prix"]["valeur"]+"\">"+data[i]["prix"]["valeur"]+"</span>\n\
+					<span class=\"prix-unite\">"+data[i]["prix"]["unite"]+"</span>\n\
+				</section>\n\
+				<section class=\"categorie\">"+data[i]["categorie"]+"</section>\n\
+				</article>").appendTo( "#allproducts" );
 			});
 			Articles.setPagesNav(vnombre);
 			
@@ -76,21 +87,9 @@ var Articles = (function() {
 						oArticle.oArticlePrixValeur = articlePrixValeur;
 						oArticle.oArticlePrixUnite = articlePrixUnite;
 					var jArticel = JSON.stringify(oArticle);
-					//console.log(oArticle);
-					//console.log(jArticel);
-					//
-					/*
-					console.log(localStorage.getItem("products"));
-					if (localStorage.getItem("products") != null) {
-						productsAjouter = localStorage.getItem("products")
-					} else {
-						var productsAjouter = 0;
-					}*/
-					//localStorage.setItem("products",productsAjouter++)
 					localStorage.setItem(articleID, jArticel);
-
 				};
-				//console.log(localStorage.getItem("products"));
+
 				
 
 			});	
@@ -147,4 +146,3 @@ var Articles = (function() {
 
 
 }());
-
