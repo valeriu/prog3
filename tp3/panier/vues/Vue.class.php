@@ -19,16 +19,20 @@ class Vue {
 	 * @access public
 	 * 
 	 */
-	public function afficheAccueil() {
-		?>
-		<article>
-			<h1>Bienvenue sur Simple MVC Structure </h1>
-			<p>Simple MVC Structure  n'est pas un framework, mais seulement une structure de base qui permet de monter un MVC rapidement en php. 
-				Il suffit de forker le <a href="#">dépot Github</a> et de dupliquer les classes vues et modele afin d'en disposer à votre convenance.</p>
-		</article>
-		<?php
-		
-	}
+	public function afficheAccueil() { 	?>
+	  <!-- Produits -->
+	  <div class="panier">
+		  
+		  	<script src="../js/panier.js"></script>
+			<script>
+				$(function() {
+					Panier.getArticlesLocalStorage();
+				});
+			
+			</script>
+	  </div><!-- /Produits -->  
+	<div class="total">Montant total : <span id="montantotal">55</span></div>	
+	<?php 	}
 	
 
 }
