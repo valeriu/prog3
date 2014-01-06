@@ -21,7 +21,7 @@ $(function(){
 	////panie
 	//$('.glyphicon').css();
 	
-	$("a.btn-danger > span").html(localStorage.getItem("products"));
+	$("a.btn-danger > span").html(localStorage.getItem("total"));
 
 
 });
@@ -71,12 +71,14 @@ var Articles = (function() {
 				var articelImage = $( "#"+articleID+" .artimg" ).attr( "src" );
 				var articelCategorie =  $( "#"+articleID+" .categorie" ).text();
 				var articlePrixValeur =  $( "#"+articleID+" .prix-valeur" ).text();
+				var articlePrixValeurDef =  $( "#"+articleID+" .prix-valeur" ).attr("data-prix");
 				var articlePrixUnite =  $( "#"+articleID+" .prix-unite" ).text();
 				//console.log(articleID+" / "+ articelNom+" / "+ articelDescription+" / "+ articelCategorie+" / "+ articlePrixValeur+" / "+articlePrixUnite+" / "+articelImage);
 				
 				if (localStorage.getItem(articleID)) {
-					console.log("exista");
-					console.dir(JSON.parse(localStorage.getItem(articleID)));
+					//console.log("exista");
+					//console.dir(JSON.parse(localStorage.getItem(articleID)));
+
 				} else {
 					var oArticle = new Object();
 						oArticle.oArticleID = articleID;
@@ -84,10 +86,21 @@ var Articles = (function() {
 						oArticle.oArticelDescription = articelDescription;
 						oArticle.oArticelImage = articelImage;
 						oArticle.oArticelCategorie = articelCategorie;
+						oArticle.oArticelQuantity = "1";
 						oArticle.oArticlePrixValeur = articlePrixValeur;
+						oArticle.oArticlePrixValeurDef = articlePrixValeurDef;
 						oArticle.oArticlePrixUnite = articlePrixUnite;
 					var jArticel = JSON.stringify(oArticle);
 					localStorage.setItem(articleID, jArticel);
+
+					if (localStorage.getItem("total")) {
+						var totalArticleLocalStorage = parseFloat(localStorage.getItem("total"))+1;
+						localStorage.setItem("total", totalArticleLocalStorage);
+					} else {
+						localStorage.setItem("total", 1);
+					}
+								
+					$("a.btn-danger > span").html(localStorage.getItem("total"));
 				};
 
 				
