@@ -41,7 +41,7 @@ header .btn-danger:hover, header .btn-danger:focus {
 footer {
 	border-radius: 4px;
 	padding:10px;
-	margin-bottom:15px;
+	margin:15px 0;
 	background-color:#BDC3C7;
 }
 /* All Articles */
@@ -374,4 +374,28 @@ See more at: http://cssload.net/#sthash.IARWKH0e.dpuf
 		background-color:#FFFFFF;
 		transform: translateY(-21px);
 	}
+}
+.reponse {
+	padding: 10px;
+}
+.reponse-date {
+	width: 40%;
+	float: left;
+	padding-left: 10px;
+	font-size: 20px;
+}
+.reponse-total {
+	width: 40%;
+	float: left;
+	font-size: 20px;
+	
+}
+.reponse-detail {
+	width: 15%;
+	float: right;
+	text-align: right;
+	padding-right: 10px;
+}
+.reponse-details {
+	display: none;
 }
