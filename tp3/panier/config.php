@@ -9,6 +9,9 @@
  * @license http://creativecommons.org/licenses/by-nc/3.0/deed.fr
  * 
  */
+
+
+	//autoload function
 	function mon_autoloader($class) 
 	{
 		$dossierClasse = array('modeles/', 'vues/', 'lib/', '' );	// Ajouter les dossiers au besoin
@@ -24,5 +27,7 @@
 	}
 	
 	spl_autoload_register('mon_autoloader');
+
+
 	
 ?>
