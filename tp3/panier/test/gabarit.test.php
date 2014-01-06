@@ -6,15 +6,49 @@
 
 		<title>Test unitaire</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link href="../css/global.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
 		<div id="header">
-			<h1>Test - Modèles</h1>
+			<h1>Test - getListProduis</h1>
 		</div>
 		<div id="contenu">
-			<?php // Placer vos tests unitaires ici... ?>
+			<?php 
+			function bdconnect() {
+				// Data base config
+				$dsn = "mysql:host=localhost;dbname=ex07";
+				$user = "root";
+				$pass = "";
+
+				$id = new PDO($dsn, $user, $pass);
+				$id->exec('SET NAMES UTF8');
+				return $id;
+			}
+	
+			$email = "valeriu@tihai.md";
+			$data = date("Y-m-d H:i:s");
+			$produitbd = "Produs";
+			$total = "33,44";
+
+			$oModele = new Modele();
+			$reponse = $oModele->getListProduis($email);
+
+			var_dump($reponse);
+
+			$email2 = "sdssss";
+
+			$oModele = new Modele();
+			$reponse = $oModele->getListProduis($email2);
+
+			//var_dump($reponse);
+			
+			echo "<hr><h1>Test - setCommande</h1>";
+			$oModele = new Modele();
+			$reponse = $oModele->setCommande($email, $data, $produitbd, $total);
+			print_r($reponse);
+		
+
+			 ?>
 		</div>
 		<div id="footer">
 
