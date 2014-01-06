@@ -18,40 +18,45 @@ class Controler
 		 * Traite la requête
 		 * @return void
 		 */
-		public function gerer()
-		{
+		public function gerer() {
 			
 			switch ($_GET['requete']) {
-				case 'accueil':
-					$this->accueil();
+				case 'panier':
+					$this->panier();
 					break;
+				case 'listecommande':
+					$this->listeCommande();
+					break;
+				case 'commande':
+					$this->passerCommande();
+					break;									
 				default:
-					$this->accueil();
+					$this->panierError();
 					break;
 			}
 		}
-		private function accueil()
-		{
+		
+		//Afficher panier
+		private function panier() {
 			$oVue = new Vue();
-			$oVue->afficheAccueil();
+			$oVue->affichePanier();
 		}
-		// Placer les méthodes du controleur.
-		
-		
+
+		//Afficher verification email (form)
+		private function listeCommande() {
+			$oVue = new Vue();
+			$oVue->afficheListeCommande();
+		}
+
+		//Afficher Passer Commande (ajoute au BD)
+		private function passerCommande() {
+			$oVue = new Vue();
+			$oVue->affichePasserCommande();
+		}	
+		//Afficher panier
+		private function panierError() {
+			$oVue = new Vue();
+			$oVue->affichePanierError();
+		}
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
