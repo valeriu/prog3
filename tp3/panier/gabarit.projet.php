@@ -22,11 +22,9 @@
 	  <header class="header">
 		<!--Nav simple-->
 		<ul class="nav nav-pills pull-right">
-		  <li class="active"><a href="#">Home</a></li>
-		  <li><a href="#">About</a></li>
-		   <li><a href="#">Produits</a></li>
-			<li><a href="#">Contact</a></li>
-		  <li class="cartitem"><a class="btn-danger" href="panier/index.php"><span>0</span> Items</a></li>
+		  <li class="active"><a href="../tp3.html">Home</a></li>
+			<li><a href="index.php?requete=listecommande">Voir mes commandes</a></li>
+		  <li class="cartitem"><a class="btn-danger" href="#"><span id="totalArticle">0</span> Items</a></li>
 		</ul>
 		<!-- Tritre du site -->
 		<h3 class="text-muted">Shop Online</h3>
@@ -37,7 +35,6 @@
 			<?php 		
 				$oControleur = new Controler();	
 				$oControleur->gerer();
-				
 			?>
 			
   <!-- Ajouter pagination par programmation-->
@@ -48,6 +45,12 @@
 
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/panier.js"></script>
+	<script>
+		$(function() {
+			Panier.getArticlesLocalStorage();
+		});
+	</script>
   </body>
 </html>
 <!--
